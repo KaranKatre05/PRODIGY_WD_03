@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tac Toe | Ultimate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-animation"></div>
+
+    <div class="game-wrapper">
+        <header>
+            <div class="logo-container">
+                <h1>TIC <span class="highlight">TAC</span> TOE</h1>
+                <div class="line-deco"></div>
+            </div>
+            <div class="sound-toggle" id="soundBtn">
+                <i class="fas fa-volume-up"></i>
+            </div>
+        </header>
+
+        <div class="scoreboard">
+            <div class="score-box p1 active-turn">
+                <span class="label">Player X</span>
+                <span class="score" id="score-x">0</span>
+            </div>
+            <div class="score-box draw">
+                <span class="label">Draws</span>
+                <span class="score" id="score-draw">0</span>
+            </div>
+            <div class="score-box p2">
+                <span class="label">Player O</span>
+                <span class="score" id="score-o">0</span>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <button id="btn-pvp" class="mode-btn active" onclick="setMode('PvP')">PvP</button>
+            <button id="btn-ai" class="mode-btn" onclick="setMode('AI')">vs CPU</button>
+        </div>
+
+        <div class="board-container">
+            <div class="game-board" id="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <div class="status-msg" id="status-text">PLAYER X'S TURN</div>
+        </div>
+
+        <button id="restart-btn" class="cyber-btn">
+            <span class="btn-text">RESET ROUND</span>
+            <span class="btn-glitch"></span>
+        </button>
+    </div>
+
+    <div class="modal-overlay" id="winnerOverlay">
+        <div class="modal-content">
+            <h2 id="winnerText">WINNER!</h2>
+            <div class="winner-icon" id="winnerIcon">🏆</div>
+            <button onclick="resetGame()" class="cyber-btn modal-btn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <canvas id="confetti"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
